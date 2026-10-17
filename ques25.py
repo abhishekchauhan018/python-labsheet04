@@ -1,0 +1,16 @@
+paragraph = input("Enter a paragraph: ").lower()
+words = paragraph.split()
+
+frequency = {}
+
+for word in words:
+    word = word.strip(".,!?;:\"'()")
+    if word:
+        if word in frequency:
+            frequency[word] += 1
+        else:
+            frequency[word] = 1
+
+print("Word frequencies:")
+for word, count in frequency.items():
+    print(word, ":", count)
